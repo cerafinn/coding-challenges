@@ -17,4 +17,12 @@ public class Main {
     listTwo.add(9);
     listTwo.addLast(2);
   }
+
+  static Integer sumTotal(int ..values) {
+
+  }
+
+  static Integer getNum(String start, LinkedList<Integer> list) {
+
+  }
 }
