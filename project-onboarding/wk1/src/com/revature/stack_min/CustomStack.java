@@ -4,11 +4,16 @@ import java.util.Stack;
 
 public class CustomStack {
   // properties: stack of elements and minElement -- can the min el be generic?
-  Stack<E> myStack;
+  Stack<E> mainStack;
+  Stack<E> minElStack;
 
-  void push(int element) {
-    // add to tail/top of stack
-    // check min element against value pushed to stack?
+
+
+  void push(E element) {
+    mainStack.push(element);
+    if (minElStack.isEmpty() || minElStack.peek() >= element) {
+      minElStack.push(element);
+    }
   }
 
   void pop() {
