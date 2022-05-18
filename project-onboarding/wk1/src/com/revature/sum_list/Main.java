@@ -37,7 +37,7 @@ public class Main {
   }
 
   static Integer sumTotal(Integer ...values) {
-    Integer sum = 0;
+    int sum = 0;
 
     for(int value : values) {
       sum += value;
