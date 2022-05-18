@@ -6,6 +6,8 @@ import java.util.Objects;
 
 public class Main {
   public static void main(String[] args) {
+    String start = "start";
+    String end = "end";
 
     LinkedList<Integer> listOne = new LinkedList<>();
 
@@ -18,25 +20,42 @@ public class Main {
     listTwo.add(9);
     listTwo.addLast(2);
 
-    Integer numOne = getNum(listOne);
-    Integer numTwo = getNum(listTwo);
+    Integer numOne = getNum(start, listOne);
+    Integer numTwo = getNum(start, listTwo);
+
+    Integer numThree = getNum(end, listOne);
+    Integer numFour = getNum(end, listTwo);
+
+    Integer sumOne = sumTotal(numOne, numTwo);
+    Integer sumTwo = sumTotal(numThree, numFour);
 
     System.out.println(numOne);
     System.out.println(numTwo);
+
+    System.out.println(sumOne);
+    System.out.println(sumTwo);
   }
 
   static Integer sumTotal(Integer ...values) {
-    return values[0];
+    Integer sum = 0;
+
+    for(int value : values) {
+      sum += value;
+    }
+    return sum;
   }
 
-  static Integer getNum(LinkedList<Integer> list) {
-    Iterator<Integer> it = list.descendingIterator();
-
+  static Integer getNum(String firstNum, LinkedList<Integer> list) {
+    Iterator<Integer> it;
     StringBuilder num = new StringBuilder();
 
-    while (it.hasNext()) {
-      num.append(it.next());
+    if(Objects.equals(firstNum, "start")) {
+      it = list.iterator();
+    } else {
+      it = list.descendingIterator();
     }
+
+    while (it.hasNext()) { num.append(it.next()); }
 
     return Integer.valueOf(num.toString());
   }
