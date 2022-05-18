@@ -2,7 +2,7 @@ package com.revature.stack_min;
 
 import java.util.Stack;
 
-public class custom_stack {
+public class CustomStack {
   // properties: stack of elements and minElement -- can the min el be generic?
   Stack<E> myStack;
 
@@ -16,7 +16,7 @@ public class custom_stack {
     // check against min element -- what happens if min element == pop value?
   }
 
-   min() {
+  void min() {
   // return min value
   }
 }
