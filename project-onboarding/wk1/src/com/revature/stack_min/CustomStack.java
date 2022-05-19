@@ -2,15 +2,10 @@ package com.revature.stack_min;
 
 import java.util.Stack;
 
-public class CustomStack<E> {
+public class CustomStack {
   // properties: can they be generic?
   Stack<Integer> mainStack;
   Stack<Integer> minElStack;
-
-  public CustomStack(Stack<Integer> mainStack, Stack<Integer> minElStack) {
-    this.mainStack = mainStack;
-    this.minElStack = minElStack;
-  }
 
   void push(Integer element) {
     mainStack.push(element);
