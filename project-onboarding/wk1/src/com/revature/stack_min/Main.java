@@ -23,6 +23,7 @@ public class Main {
     pushItem(st, minStack, 33);
     pushItem(st, minStack, 9);
 
+    System.out.println(st);
     System.out.println(st.peek());
     System.out.println(min(minStack));
     popItem(st, minStack);
