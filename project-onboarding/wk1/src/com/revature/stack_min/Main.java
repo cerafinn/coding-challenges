@@ -10,6 +10,8 @@ public class Main {
     Stack<Integer> st = new Stack<>();
     Stack<Integer> minStack = new Stack<>();
 
+    popItem(st, minStack);
+
     pushItem(st, minStack, 27);
     pushItem(st, minStack, 77);
     pushItem(st, minStack, 20);
@@ -40,6 +42,10 @@ public class Main {
   }
 
   static void popItem(Stack<Integer> mainStack, Stack<Integer> minElStack) {
+    if(mainStack.isEmpty()) {
+      System.out.println("Nothing on the stack");
+      return;
+    }
     int value = mainStack.pop();
 
     if(minElStack.peek() == value) {
