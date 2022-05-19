@@ -15,12 +15,14 @@ public class CustomStack {
   }
 
   void pop() {
-    // remove from tail/top of stack
-    // check against min element -- what happens if min element == pop value?
+    int value = mainStack.pop();
+
+    if(minElStack.peek() == value) {
+      minElStack.pop();
+    }
   }
 
   Integer min() {
-    //return min value
-    return 0;
+    return minElStack.peek();
   }
 }
