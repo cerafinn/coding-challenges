@@ -3,16 +3,16 @@ package com.revature.stack_min;
 import java.util.Stack;
 
 public class CustomStack<E> {
-  // properties: stack of elements and minElement -- can the min el be generic?
-  Stack<E> mainStack;
-  Stack<E> minElStack;
+  // properties: can they be generic?
+  Stack<Integer> mainStack;
+  Stack<Integer> minElStack;
 
-  public CustomStack(Stack<E> mainStack, Stack<E> minElStack) {
+  public CustomStack(Stack<Integer> mainStack, Stack<Integer> minElStack) {
     this.mainStack = mainStack;
     this.minElStack = minElStack;
   }
 
-  void push(E element) {
+  void push(Integer element) {
     mainStack.push(element);
     if (minElStack.isEmpty() || minElStack.peek() >= element) {
       minElStack.push(element);
@@ -24,8 +24,8 @@ public class CustomStack<E> {
     // check against min element -- what happens if min element == pop value?
   }
 
-  E min() {
+  Integer min() {
     //return min value
-    return E;
+    return 0;
   }
 }
